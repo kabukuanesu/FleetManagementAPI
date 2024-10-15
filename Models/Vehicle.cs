@@ -30,6 +30,9 @@ namespace FleetManagementAPI.Models
         public string VehicleType { get; set; } = "";
 
         [Column(TypeName = "nvarchar(100)")]
+        public string VehicleFuelType { get; set; } = "";
+
+        [Column(TypeName = "nvarchar(100)")]
         public string VehicleColor { get; set; } = "";
 
         [Column(TypeName = "nvarchar(100)")]

@@ -4,7 +4,7 @@ namespace FleetManagementAPI.Models
 {
     public class VehicleContext : DbContext
     {
-        public VehicleContext(DbContextOptions options) : base(options)
+        public VehicleContext(DbContextOptions<VehicleContext> options) : base(options)
         {
         }
 
