@@ -43,6 +43,14 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"))
 builder.Services.AddDbContext<TripPaymentContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
 
+// Enable Cross Origin Resource Sharing
+builder.Services.AddCors(options => options
+    .AddDefaultPolicy(policy => policy
+    .AllowAnyOrigin()
+    .AllowAnyHeader()
+    .AllowAnyMethod()));
+#endregion
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -53,6 +61,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
+
+app.UseCors();
 
 app.MapControllers();
 
