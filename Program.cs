@@ -49,7 +49,7 @@ builder.Services.AddCors(options => options
     .AllowAnyOrigin()
     .AllowAnyHeader()
     .AllowAnyMethod()));
-#endregion
+// #endregion
 
 var app = builder.Build();
 
@@ -59,6 +59,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Comment the above if-statement
+// And then uncomment the below
+
+// app.UseSwagger();
+// app.UseSwaggerUI();
 
 app.UseAuthorization();
 

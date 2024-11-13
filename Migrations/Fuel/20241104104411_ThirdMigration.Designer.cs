@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FleetManagementAPI.Migrations.Fuel
 {
     [DbContext(typeof(FuelContext))]
-    [Migration("20241015093041_ThirdMigration")]
+    [Migration("20241104104411_ThirdMigration")]
     partial class ThirdMigration
     {
         /// <inheritdoc />

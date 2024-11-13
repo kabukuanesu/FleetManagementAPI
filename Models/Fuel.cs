@@ -33,6 +33,6 @@ namespace FleetManagementAPI.Models
         public string VehicleFuelComments { get; set; } = "";
 
         [Column(TypeName = "nvarchar(100)")]
-        public string VehicleFuelCreatedDate { get; set; } = "";
+        public DateTime VehicleFuelCreatedDate { get; set; } = DateTime.Now;
     }
 }

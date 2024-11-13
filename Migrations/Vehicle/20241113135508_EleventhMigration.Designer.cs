@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FleetManagementAPI.Migrations.Vehicle
 {
     [DbContext(typeof(VehicleContext))]
-    [Migration("20241015094828_EleventhMigration")]
+    [Migration("20241113135508_EleventhMigration")]
     partial class EleventhMigration
     {
         /// <inheritdoc />

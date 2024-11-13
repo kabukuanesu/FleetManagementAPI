@@ -48,9 +48,9 @@ namespace FleetManagementAPI.Models
         public string VehicleCreatedBy { get; set; } = "";
 
         [Column(TypeName = "nvarchar(100)")]
-        public string VehicleCreatedDate { get; set; } = "";
+        public DateTime VehicleCreatedDate { get; set; } = DateTime.Now;
 
         [Column(TypeName = "nvarchar(100)")]
-        public string VehicleModifiedDate { get; set; } = "";
+        public DateTime VehicleModifiedDate { get; set; } = DateTime.Now;
     }
 }
