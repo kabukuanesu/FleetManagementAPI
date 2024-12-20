@@ -39,7 +39,7 @@ namespace FleetManagementAPI.Models
         public string VehicleMilagePerLitre { get; set; } = "";
 
         [Column(TypeName = "nvarchar(100)")]
-        public string VehicleIsActive { get; set; } = "";
+        public string VehicleIsActive { get; set; } = "Standby";
 
         [Column(TypeName = "nvarchar(100)")]
         public string VehicleRegistrationExpiryDate { get; set; } = "";
