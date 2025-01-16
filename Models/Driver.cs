@@ -33,19 +33,27 @@ namespace FleetManagementAPI.Models
         public string DriverTotalExperience { get; set; } = "";
 
         [Column(TypeName = "nvarchar(100)")]
-        public string DriverDateOfJoining { get; set; } = "";
+        public DateTime DriverDateOfJoining { get; set; } = DateTime.Now;
 
+        /*[Column(TypeName = "nvarchar(100)")]
+        public string DriverIsActive { get; set; } = "";*/
+
+        private string _driverIsActive = "Standby";
         [Column(TypeName = "nvarchar(100)")]
-        public string DriverIsActive { get; set; } = "";
+        public string DriverIsActive
+        {
+            get { return _driverIsActive; }
+            set { _driverIsActive = string.IsNullOrWhiteSpace(value) ? "Standby" : value; }
+        }
 
         [Column(TypeName = "nvarchar(100)")]
         public string DriverCreatedBy { get; set; } = "";
 
         [Column(TypeName = "nvarchar(100)")]
-        public string DriverCreatedDate { get; set; } = "";
+        public DateTime DriverCreatedDate { get; set; } = DateTime.Now;
 
         [Column(TypeName = "nvarchar(100)")]
-        public string DriverModifiedDate { get; set; } = "";
+        public DateTime DriverModifiedDate { get; set; } = DateTime.Now;
 
         [Column(TypeName = "varbinary(max)")]
         public byte[]? DriverDocument { get; set; } // This column will store the file data

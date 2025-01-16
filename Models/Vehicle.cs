@@ -38,8 +38,13 @@ namespace FleetManagementAPI.Models
         [Column(TypeName = "nvarchar(100)")]
         public string VehicleMilagePerLitre { get; set; } = "";
 
+        private string _vehicleIsActive = "Standby";
         [Column(TypeName = "nvarchar(100)")]
-        public string VehicleIsActive { get; set; } = "Standby";
+        public string VehicleIsActive
+        {
+            get { return _vehicleIsActive; }
+            set { _vehicleIsActive = string.IsNullOrWhiteSpace(value) ? "Standby" : value; }
+        }
 
         [Column(TypeName = "nvarchar(100)")]
         public string VehicleRegistrationExpiryDate { get; set; } = "";
