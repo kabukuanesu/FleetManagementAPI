@@ -35,8 +35,16 @@ namespace FleetManagementAPI.Models
         [Column(TypeName = "nvarchar(100)")]
         public string TripAmount { get; set; } = "";
 
+        /*[Column(TypeName = "nvarchar(100)")]
+        public string TripStatus { get; set; } = "";*/
+
+        private string _tripStatus = "Scheduled";
         [Column(TypeName = "nvarchar(100)")]
-        public string TripStatus { get; set; } = "";
+        public string TripStatus
+        {
+            get { return _tripStatus; }
+            set { _tripStatus = string.IsNullOrWhiteSpace(value) ? "Scheduled" : value; }
+        }
 
         [Column(TypeName = "nvarchar(100)")]
         public string TripTrackingCode { get; set; } = "";
@@ -45,9 +53,9 @@ namespace FleetManagementAPI.Models
         public string TripCreatedBy { get; set; } = "";
 
         [Column(TypeName = "nvarchar(100)")]
-        public string TripCreatedDate { get; set; } = "";
+        public DateTime TripCreatedDate { get; set; } = DateTime.Now;
 
         [Column(TypeName = "nvarchar(100)")]
-        public string TripModifiedDate { get; set; } = "";
+        public DateTime TripModifiedDate { get; set; } = DateTime.Now;
     }
 }
